@@ -20,15 +20,17 @@ class UserControler {
           .json({ error: 'Erro ao validar as informações' });
       }
 
-      const user = await User.findOne({ email: req.body.email })
+      const userExists = await User.findOne({ email: req.body.email })
         .lean()
         .exec();
 
-      if (user) {
+      if (userExists) {
         return res
           .status(400)
           .json({ error: 'Esse e-mail já está cadastrado' });
       }
+
+      const user = await User.create(req.body);
 
       return res.json(user);
     } catch (err) {
