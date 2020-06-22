@@ -1,11 +1,13 @@
 import { Schema, model } from 'mongoose';
 
+/* Schema padrão do mongoose */
+
 const useSchema = new Schema(
   {
     usuario: {
-      type: String,
-      required: true,
-      maxlength: 50,
+      type: String, // campo do tipo string
+      required: true, // campo obrigatório
+      maxlength: 50, // tamanho maximo de 50 caracteres
     },
     senha: {
       type: String,
@@ -14,14 +16,15 @@ const useSchema = new Schema(
     },
     email: {
       type: String,
-      unique: true,
-      required: true,
+      unique: true, // campo único -- não pode existir mais de um email
+      required: true, // campo obrigatório
       maxlength: 50,
     },
   },
   {
-    timestamps: true,
+    timestamps: true, // timestamps para criar um registro DATE
+    // para inserção e atualização de todo e qualquer elemento no banco de dados
   }
 );
 
-module.exports = model('user', useSchema);
+export default model('user', useSchema);

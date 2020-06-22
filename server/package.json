@@ -8,6 +8,7 @@
     "build": "sucrase ./src -d ./dist --transforms imports"
   },
   "dependencies": {
+    "@types/mongoose": "^5.7.27",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
