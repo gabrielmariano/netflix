@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
 import UserController from './app/controllers/UserController';
+import ProfileController from './app/controllers/ProfileController';
 
 const routes = new Router();
 
@@ -86,5 +87,7 @@ routes.put('/usuario/:id', UserController.update);
   deletar o usuário passando a ID dele como params
 */
 routes.delete('/usuario/:id', UserController.delete);
+
+routes.get('/profile', ProfileController.index);
 
 export default routes;
