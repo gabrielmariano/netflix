@@ -8,7 +8,7 @@ const ProfileSchema = Yup.object().shape({
 });
 
 class Profile {
-  async store(req, res) {
+  async index(req, res) {
     try {
       if (!(await ProfileSchema.isValid(req.body))) {
         return res.status(400).json('Dados inválidos');
