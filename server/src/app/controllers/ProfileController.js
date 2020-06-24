@@ -1,20 +1,11 @@
-import * as Yup from 'yup';
 import User from '../models/User';
-
-const ProfileSchema = Yup.object().shape({
-  email: Yup.string()
-    .email()
-    .required(),
-});
 
 class Profile {
   async index(req, res) {
     try {
-      if (!(await ProfileSchema.isValid(req.body))) {
-        return res.status(400).json('Dados inválidos');
-      }
-
-      const user = await User.findOne({ email: req.params.email });
+      const user = await User.findOne({ email: req.query.email })
+        .lean()
+        .exec();
 
       if (user) {
         return res.json({ exists: true });

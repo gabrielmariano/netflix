@@ -2,6 +2,7 @@ import { Router } from 'express';
 
 import UserController from './app/controllers/UserController';
 import ProfileController from './app/controllers/ProfileController';
+import AuthController from './app/controllers/AuthController';
 
 const routes = new Router();
 
@@ -14,5 +15,7 @@ routes.put('/usuario/:id', UserController.update);
 routes.delete('/usuario/:id', UserController.delete);
 
 routes.get('/profile', ProfileController.index);
+
+routes.post('/auth', AuthController.store);
 
 export default routes;
