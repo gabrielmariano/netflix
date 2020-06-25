@@ -71,7 +71,7 @@ function SignIn() {
                 <img src={logo} />
             </Header>
 
-            <body>
+
                 <Box>
                     <Text>Entrar</Text>
                     <Login>
@@ -117,7 +117,7 @@ function SignIn() {
                                     name="check"
                                     value="senha"
                                 />
-                                Lembre-se de mim
+                                <span>Lembre-se de mim</span>
                                 <a href="">Precisa de ajuda?</a>
                             </p>
                         </Check>
@@ -130,16 +130,16 @@ function SignIn() {
                                         src="https://assets.nflxext.com/ffe/siteui/login/images/FB-f-Logo__blue_57.png"
                                         height="20px"
                                     ></img>
-                                    Conectar com Facebook
+                                    <span>Conectar com Facebook</span>
                                 </p>
                             </a>
                         </Facebook>
 
                         <Novo>
-                            <p>
+                            <span>
                                 Novo por aqui?
                                 <NavLink to="/signup">Assine agora</NavLink>
-                            </p>
+                            </span>
                         </Novo>
 
                         <Captcha>
@@ -151,7 +151,7 @@ function SignIn() {
                         </Captcha>
                     </Login>
                 </Box>
-            </body>
+
             <Footer>aqui fica meu footer</Footer>
         </Wrapper>
     );

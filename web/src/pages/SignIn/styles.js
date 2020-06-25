@@ -3,10 +3,7 @@ import { darken } from 'polished';
 
 import fundo from '../../assets/images/bkground.jpg';
 
-export const body = styled.body`
-    background: black;
-    height: 100vh;
-`;
+
 export const Footer = styled.footer`
     background: black;
     color: white;
@@ -14,10 +11,11 @@ export const Footer = styled.footer`
 `;
 
 export const Wrapper = styled.div`
-    /* position: fixed; */
+
+    background-image: url(${fundo});
     width: 100%;
     height: 100%;
-    background-image: url(${fundo});
+
 `;
 
 export const Header = styled.header`
@@ -29,8 +27,8 @@ export const Header = styled.header`
 
     img {
         position: absolute;
-        left: 2%;
-        top: -6%;
+        left: 1%;
+        top: -10%;
     }
 `;
 
@@ -38,7 +36,7 @@ export const Box = styled.div`
     flex-direction: column;
     width: 450px;
     height: 650px;
-    border-radius: 30px 20px 30px;
+    border-radius: 0px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 3%;
@@ -153,10 +151,14 @@ export const Check = styled.div`
         text-decoration: none;
         font-weight: bold;
     }
+
+    span {
+        margin-left: 3%;
+    }
 `;
 export const Facebook = styled.div`
-    margin-top: 10px;
-    margin-left: 16%;
+    margin-top: -10%;
+    margin-left: 6%;
     padding: 5% 10%;
     font-family: Helvetica;
     text-decoration: none;
@@ -164,18 +166,26 @@ export const Facebook = styled.div`
     a {
         color: grey;
         text-decoration: none;
+        margin-left: 14vh;
+    }
+
+    span{
+        margin-left: 3%;
     }
 `;
 export const Novo = styled.div`
     color: grey;
     font-family: Helvetica;
-    margin-top: 30px;
+    margin-top: -1%;
     margin-left: 16%;
 
     a {
         text-decoration: none;
         color: white;
         font-weight: bold;
+    }
+    span {
+        margin-left: 15%;
     }
 `;
 export const Captcha = styled.div`
