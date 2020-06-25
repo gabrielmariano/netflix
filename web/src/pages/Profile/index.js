@@ -1,30 +1,29 @@
 import React, { useEffect } from 'react';
-import { resolve, join } from 'path';
-import { AiTwotoneHome } from 'react-icons/all';
-
-import DropdownWrapper from '../../components/Dropdown';
-
 import { toast } from 'react-toastify';
 import api from '../../services/api';
+import walkinglogo from "../../assets/images/walkinglogo.webp";
+import { FaSearch, AiOutlineGift, GoBell } from 'react-icons/all';
 
 import {
     Wrapper,
     Header,
-    Nav,
+    NavContainer,
+    NavLogo,
+    Logo,
+    NavMain,
+    ListItems,
     Item,
-    Others,
-    Search,
-    Text,
-    Box,
-    Bell,
-    Fotos,
-    NetflixLogo,
+    NavRight,
+    NavLink,
+    NavElement,
+    Text1,
+    Text2,
+    Btn,
+    Btn2,
+    Dropdown,
+    Dropbtn,
+    Content,
 } from './styles';
-
-import logo from '../../assets/images/logo.png';
-import search from '../../assets/images/search.png';
-import box from '../../assets/images/gift-box.png';
-import notification from '../../assets/images/notification.png';
 
 function Profile(props) {
     const [profileInfo, setProfileInfo] = React.useState({
@@ -57,54 +56,96 @@ function Profile(props) {
 
     return (
         <Wrapper>
-            <Header>
-                <img src={logo} />
-                <Nav>
-                    <Item>Início</Item>
-                    <Item>Séries</Item>
-                    <Item>Filmes</Item>
-                    <Item>Mais Recentes</Item>
-                    <Item>Minha Lista</Item>
-                </Nav>
-                <Others>
-                    <Search>
-                        <img src={search} />
-                    </Search>
-                    <Text>
-                        <p>INFANTIL</p>
-                    </Text>
-                    <Box>
-                        <img src={box} />
-                    </Box>
-                    <Bell>
-                        <img src={notification} />
-                    </Bell>
+          <Header>
+          <NavContainer>
+            <NavLogo>
+            <Logo />
+            </NavLogo>
+            <NavMain>
+              <ListItems>
+                <Item>
+                  <span>
+                    <NavLink to="/serie"> Inicio </NavLink>
+                  </span>
+                </Item>
+                <Item>
+                  <span>
+                    <NavLink to="/serie"> Séries </NavLink>
+                  </span>
+                </Item>
+                <Item>
+                  <span>
+                    <NavLink to="/serie"> Filmes </NavLink>
+                  </span>
+                </Item>
+                <Item>
+                  <span>
+                    <NavLink to="/serie"> Mais Recentes </NavLink>
+                  </span>
+                </Item>
+                <Item>
+                  <span>
+                    <NavLink to="/serie"> Minha Lista </NavLink>
+                  </span>
+                </Item>
+              </ListItems>
+            </NavMain>
+            <NavRight>
+              <NavElement>
+                <span>
+                  <FaSearch size="18" color="#fff" />
+                </span>
+              </NavElement>
+              <NavElement>
+                <span>INFANTIL</span>
+              </NavElement>
+              <NavElement>
+                <span>
+                  <AiOutlineGift size="18" color="#fff" />
+                </span>
+              </NavElement>
+              <NavElement>
+                <span>
+                  <GoBell size="18" color="#fff" />
+                </span>
+              </NavElement>
+              <NavElement>
+                <div>
+                  <img
+                    src="https://occ-0-804-1380.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABdV73aGll9X5TMw9EIq-tUn0Fcz8g5jXPCpuLSXvuWP-xIzsGdqwRdsSEQBxHhofCBQQtPZDmdkWpP2j1nV7mv8.png?r=478"
+                    alt="logo"
+                  />
+                </div>
+              </NavElement>
+              <NavElement>
+                <Dropdown>
+                  <Dropbtn>Dropdown</Dropbtn>
+                    <Content>
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </Content>
+                </Dropdown>
+              </NavElement>
+            </NavRight>
+          </NavContainer>
+          </Header>
 
-                    <DropdownWrapper />
-                </Others>
-            </Header>
+          <img src={walkinglogo} />
+
+          <Text1>Top 5 séries de hoje</Text1>
+          <Text2>
+            Na série de terror de maior sucesso na TV, quem restou
+            <br />
+            na humanidade precisa lutar com zumbis-e entre si.
+          </Text2>
+
+                <Btn>Assistir</Btn>
+                <Btn2>Mais Informações</Btn2>
+
+
         </Wrapper>
-    );
-}
+      );
+    }
 
 export default Profile;
-
-// const signOut = () => {
-//     localStorage.removeItem('userProfile');
-//     history.push('/');
-
-//     toast.success('Usuário deslogado com sucesso');
-// };
-
-//         <Button
-//             onClick={(event) => {
-//                 signOut(event);
-//             }}
-//         >
-//             <FiLogOut color="#8159ca" size="34px" />
-//         </Button>
-
-// <script
-// crossorigin
-// src="https://bootswatch.com/4/lux/bootstrap.min.css"
-// ></script>
