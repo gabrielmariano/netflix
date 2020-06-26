@@ -18,7 +18,6 @@ import {
     Novo,
     Captcha,
     Footer,
-
 } from './styles';
 
 import logo from '../../assets/images/logo.png';
